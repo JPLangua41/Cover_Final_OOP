@@ -221,11 +221,17 @@ public class Workshop {
 
     // Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
+        if (numero < 0) {
+            return "-" + Integer.toBinaryString(Math.abs(numero));
+        }
         return Integer.toBinaryString(numero);
     }
 
     // Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
+        if (numero < 0) {
+            return "-" + Integer.toHexString(Math.abs(numero)).toUpperCase();
+        }
         return Integer.toHexString(numero).toUpperCase();
     }
 
@@ -235,32 +241,32 @@ public class Workshop {
         String eleccionComputadora = opciones[new Random().nextInt(opciones.length)];
 
         if (eleccionUsuario.equalsIgnoreCase(eleccionComputadora)) {
-            return "Empate. Ambos eligieron " + eleccionUsuario;
+            return "Empate";
         }
 
         switch (eleccionUsuario.toLowerCase()) {
             case "piedra":
                 if (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))
-                    return "Ganaste. Computadora eligió " + eleccionComputadora;
+                    return "Ganaste";
                 break;
             case "papel":
                 if (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))
-                    return "Ganaste. Computadora eligió " + eleccionComputadora;
+                    return "Ganaste";
                 break;
             case "tijera":
                 if (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))
-                    return "Ganaste. Computadora eligió " + eleccionComputadora;
+                    return "Ganaste";
                 break;
             case "lagarto":
                 if (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))
-                    return "Ganaste. Computadora eligió " + eleccionComputadora;
+                    return "Ganaste";
                 break;
             case "spock":
                 if (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))
-                    return "Ganaste. Computadora eligió " + eleccionComputadora;
+                    return "Ganaste";
                 break;
         }
-        return "Perdiste. Computadora eligió " + eleccionComputadora;
+        return "Perdiste";
     }
 
     // Método que determina el ganador en pptls2
@@ -268,6 +274,7 @@ public class Workshop {
         // game[0] = jugador1, game[1] = jugador2
         String p1 = game[0];
         String p2 = game[1];
+
         if (p1.equals(p2)) return "Empate";
 
         // reglas
@@ -276,9 +283,9 @@ public class Workshop {
                 (p1.equals("S") && (p2.equals("P") || p2.equals("L"))) ||
                 (p1.equals("L") && (p2.equals("V") || p2.equals("P"))) ||
                 (p1.equals("V") && (p2.equals("S") || p2.equals("R")))) {
-            return "Jugador 1 gana";
+            return "Player 1";
         } else {
-            return "Jugador 2 gana";
+            return "Player 2";
         }
     }
 
