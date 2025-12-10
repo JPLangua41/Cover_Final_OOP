@@ -4,8 +4,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class Workshop {
-    public static void main(String[] args) {
-        Workshop w = new Workshop();
+    static void main() {
 
     }
     // Método que suma dos números enteros
@@ -270,7 +269,7 @@ public class Workshop {
     }
 
     // Método que determina el ganador en pptls2
-    public String pptls2(String game[]) {
+    public String pptls2(String[] game) {
         // game[0] = jugador1, game[1] = jugador2
         String p1 = game[0];
         String p2 = game[1];
