@@ -1,9 +1,8 @@
 package MathOperations;
 
 import javax.swing.*;
-import java.awt.event.*;
 
-public class MenuForm {
+public class Matematics {
     private JTextField txtNumero1;
     private JTextField txtNumero2;
     private JButton btnSuma;
@@ -18,7 +17,7 @@ public class MenuForm {
     private JButton btnFibonacci;
     private JPanel mainPanel; // el panel raíz del form
 
-    public MenuForm() {
+    public Matematics() {
         // Acción suma
         btnSuma.addActionListener(e -> {
             int a = Integer.parseInt(txtNumero1.getText());
@@ -96,7 +95,7 @@ public class MenuForm {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Menú Funciones");
-        frame.setContentPane(new MenuForm().mainPanel);
+        frame.setContentPane(new Matematics().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
