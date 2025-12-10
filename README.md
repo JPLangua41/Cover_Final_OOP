@@ -100,7 +100,7 @@ Workshop_repaso/
 ├── src/
 │   ├── main/
 │   │   └── java/
-│   │       └── Workshop.java   # Clase principal con métodos a implementar
+│   │       └── Workshop.Workshop.java   # Clase principal con métodos a implementar
 │   └── test/
 │       └── java/
 │           └── WorkshopTest.java  # Tests unitarios con JUnit 5
